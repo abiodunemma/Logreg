@@ -16,10 +16,12 @@ class insert_records_in_users_table extends Seeder
         $users = [
             [
                 'name' => 'abbey',
+                'area' => 'area',
                 'email' => 'abbey@example.com',
                 'password' => bcrypt('1234567')
             ],
             ['name' => 'josh',
+            'area' => 'area',
             'email' => 'josh@example.com',
             'password' => bcrypt('1234567')
 

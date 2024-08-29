@@ -8,6 +8,8 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
+
+
 Route::get('users/{id?}', 'App\Http\Controllers\UserController@getUsers');
 //Route::get('users/{$id?}', 'App\Http\Controllers\UserController@getUsers');
 //Route::get('schools',[SchoolController::class, 'list']);

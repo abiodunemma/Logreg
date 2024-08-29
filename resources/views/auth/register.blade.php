@@ -29,9 +29,9 @@
                             <label for="area" class="col-md-4 col-form-label text-md-end">{{ __('area') }}</label>
 
                         <div class="col-md-6">
-                            <input id="area" type="text" class="form-control @error('artist/studio') is-invalid @enderror" name="area" value="{{ old('area') }}" required autocomplete="artist/studio" autofocus>
+                            <input id="area" type="text" class="form-control @error('area ') is-invalid @enderror" name="area" value="{{ old('area') }}" required autocomplete="area" autofocus>
 
-                            @error('artist/studio input')
+                            @error('area')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
