@@ -27,6 +27,16 @@ class UserController extends Controller
        if($request->isMethod('post')){
            $userData = $request->input();
     // echo "<pre>"; print_r($userData);
+
+//Simple Post API Validations
+
+//check Usere Details
+    if(empty($userData['name']) || empty($userData['email']) || empty($userData['password'])){
+
+    }{
+        $message = "please enter complete user details!";
+        return  response()->json(["status"=>false, "message"]);
+    }
           $user = new User;
        $user->name = $userData['name'];
        $user->area = $userData['area'];
@@ -39,5 +49,10 @@ class UserController extends Controller
 
 }
 }
-
+  public function  addMultipleUsers(Request $request){
+    if($request->isMethod('post')){
+        $userData = $request->input();
+        echo "<pre>"; print_r($userData); die;
+  }
+}
 }
