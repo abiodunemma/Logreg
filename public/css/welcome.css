@@ -1,0 +1,108 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    background-color: #121212; /* Dark background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.welcome-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.welcome-button {
+    background-color: #007bff; /* Blue color */
+    color: #ffffff; /* White text color */
+    border: none;
+    border-radius: 8px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-button:hover {
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance the shadow on hover */
+}
+
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: blueviolet;
+    font-family: Arial, sans-serif;
+}
+
+.atm-card {
+    background-color: rgb(67, 67, 217); /* Light blue background */
+    border: 1px solid #6807d6; /* Light blue border */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 260px;
+
+}
+
+.card-header {
+    margin-top: 10px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.card-header h2 {
+    font-size: 25px;
+    font-family: Arial, sans-serif;
+    color: #f3f9f8; /* Darker blue color for text */
+}
+
+.card-content {
+    font-size: 1em;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #ffffff; /* White background for info items */
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.label {
+    font-weight: bold;
+    color: #00796b; /* Darker blue color for labels */
+}
+
+.value {
+    color: #004d40; /* Even darker blue for values */
+}
