@@ -57,11 +57,11 @@ body {
 }
 
 .atm-card {
-    background-color: rgb(67, 67, 217); /* Light blue background */
+    background-color: rgb(0, 0, 0); /* Light blue background */
     border: 1px solid #6807d6; /* Light blue border */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    width: 50%;
     margin-top: 20px;
     margin-bottom: 260px;
 
@@ -105,4 +105,71 @@ body {
 
 .value {
     color: #004d40; /* Even darker blue for values */
+}
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.atm-card {
+    background-color: #e0f7fa; /* Light blue background */
+    border: 1px solid #b2ebf2; /* Light blue border */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-header h2 {
+    font-size: 1.5em;
+    color: #00796b; /* Darker blue color for text */
+}
+
+.card-content {
+    font-size: 1em;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #ffffff; /* White background for info items */
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.label {
+    font-weight: bold;
+    color: #00796b; /* Darker blue color for labels */
+}
+
+.value {
+    color: #004d40; /* Even darker blue for values */
+}
+
+.top{
+    display: center;
 }
