@@ -1,11 +1,10 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support Page</title>
+    <title>Link page</title>
 
   <style>
 
@@ -108,40 +107,44 @@ body {
 </head>
 <body>
     <header class="header">
-        <h1>KYC Information</h1>
+        <h1>Link Bank Account</h1>
+        <p>user id: {{  Auth::User()->id  }} <span>*</span></p>
+       // <p>user id:<span>*</span></p>
     </header>
     <main class="main-content">
         <div class="container">
-            <a href="#" class="link">Chat with Us</a>
+            <a hre  1f="#" class="link">Chat with Us</a>
             <a href="#" class="link">FAQs</a>
             <a href="#" class="link">Give Feedback</a>
         </div>
-        <div class="container">
+        <section class="add-product">
+        <form action="/top" method="POST" enctype="multipart/form-data">
+            @csrf
 
-            <a href="#" class="link">call us </a>
-            <a href="#" class="link">@ask@tuochdow.gmail.com</a>
-        </div>
-        <div class="container">
-            <a href="#" class="link">instagram</a>
-            <a href="#" class="link">Facebook</a>
-            <a href="#" class="link">Twitter</a>
-        </div>
-    </main>
+           <center> <h3>link banks details</h3> </center>
+            <input type="hidden" placeholder=""  name="userid" id="userid" value="{{ Auth::user()->id  }}">
+            <input type="hidden" placeholder=""  name="name" id="name" value="{{ Auth::user()->name  }}">
+         
+
+            <input type="email"  id ="email" name="email" required maxlength="50"
+            placeholder="enter email address" class="box">
 
 
-    <footer class="footer">
-        <div class="container">
-            <nav class="footer-nav">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="support">Support</a></li>
-                    <li><a href="#">Transactions</a></li>
-                    <li><a href="#">Card</a></li>
-                    <li><a href="#">Settings</a></li>
-                </ul>
-            </nav>
-        </div>
-    </footer>
+         <center>   <p>verification staus: {{ session('mssg') }}</p> </center>
+        </center>
+
+          <button type="submit" > save</button>
+
+        </form>
+            <p>{{ session('mssg') }}</p>
+        </section>
+
+            </div>
+
+        </main>
+
+
+
 
 </body>
 </html>

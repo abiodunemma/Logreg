@@ -1,3 +1,4 @@
+@extends('layouts.app')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,6 +40,7 @@
                     <li><a href="#">Transactions</a></li>
                     <li><a href="#">Card</a></li>
                     <li><a href="#">Settings</a></li>
+        
                 </ul>
             </nav>
         </div>

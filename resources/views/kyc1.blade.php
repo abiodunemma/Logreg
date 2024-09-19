@@ -107,6 +107,8 @@ body {
   </style>
 </head>
 <body>
+
+
     <header class="header">
         <h1>KYC Information</h1>
         <p>user :{{ Auth::user()->name  }} <span>*</span></p>
@@ -122,22 +124,20 @@ body {
 
         <h3>NIN/BVN</h3>
         <input type="hidden" placeholder=""  name="userid" id="userid" value="{{ Auth::user()->id  }}">
-        <input type="hidden" placeholder=""  name="username" id="username" value="{{ Auth::user()->name  }}">
+        <input type="hidden" placeholder=""  name="name" id="username" value="{{ Auth::user()->name  }}">
 
-        <input type="text"  id ="bvn" name="name" required maxlength="50"
+        <input type="text"  id ="bvn" name="bvn" required maxlength="50"
         placeholder="enter bvn number" class="box">
 
         <p>NIN <span>*</span></p>
-        <input type="text" id="nin" name="card" class="box" required maxlength="250"
+        <input type="text" id="nin" name="nin" class="box" required maxlength="250"
         placeholder="Nin" class="ab">
     <center>
-
-
 
         <p>virification staus: {{ session('mssg') }}</p>
     </center>
 
-      <button> save</button>
+      <button type="submit" > save</button>
         <p>{{ session('mssg') }}</p>
     </section>
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Bank;
+use App\Models\Link;
 use validator;
 
 class UserController extends Controller
