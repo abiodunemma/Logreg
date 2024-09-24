@@ -11,12 +11,16 @@ Route::get('/', function () {
 Route::get('/support', [App\Http\Controllers\HomeController::class, 'support'])->middleware(('auth'));
 
 // link urls
-Route::get('/top', [App\Http\Controllers\HomeController::class, 'top'])->middleware(('auth'));
+Route::get('/top', [App\Http\Controllers\HomeController::class, 'top'])->middleware(('auth'))->name('/top');
 Route::post('/top', [App\Http\Controllers\BankController::class, 'addlink'])->name('bank-id');
 
 // kyc1 urls
 Route::get('/kyc1', [App\Http\Controllers\HomeController::class, 'follow'])->middleware(('auth'));
 Route::post('/kyc1', [App\Http\Controllers\HomeController::class, 'add'])->middleware(('auth'));
+
+// profile page functionality
+Route::get('User/profile', [App\Http\Controllers\UserController::class, 'getprofile'])->middleware(('auth'));
+// Route::get('/go', [App\Http\Controllers\HomeController::class, 'go'])->middleware(('auth'));
 
 
 // auth urls

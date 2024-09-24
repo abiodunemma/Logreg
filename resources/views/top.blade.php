@@ -17,7 +17,7 @@
 
     body {
         font-family: Arial, sans-serif;
-        background-color: black;
+        background-color: rgb(132, 110, 171);
         margin-bottom: 80px; /* Ensure there's space for the footer */
     }
 
@@ -47,7 +47,7 @@
 
     .footer-nav a {
         text-decoration: none;
-        color: #ffffff;
+        color: #f11010;
         font-size: 0.9em;
     }
 
@@ -57,16 +57,16 @@
 
 
 body {
-    background-color: #000000; /* Black background */
-    color: #ffffff; /* White text color */
+    background-color: #9973b3; /* Black background */
+    color: #3a0303; /* White text color */
     font-family: Arial, sans-serif;
 }
 
 .header {
     text-align: center;
     padding: 20px;
-    background-color: #000000; /* Darker background for header */
-    border-bottom: 2px solid #444444; /* Slightly lighter border */
+    background-color: #e8e1e1; /* Darker background for header */
+    border-bottom: 2px solid #1263be; /* Slightly lighter border */
 }
 
 .header h1 {
@@ -82,7 +82,7 @@ body {
 }
 
 .container {
-    background-color: #222222; /* Darker container background */
+    background-color: #20052c; /* Darker container background */
     border: 1px solid #000000; /* Border for container */
     border-radius: 8px;
     padding: 20px;
@@ -93,7 +93,7 @@ body {
 
 .link {
     display: block;
-    color: #1e90ff; /* Blue color for links */
+    color: #ff1e2d; /* Blue color for links */
     text-decoration: none;
     margin: 10px 0;
     font-size: 1.2em;
@@ -124,13 +124,18 @@ body {
            <center> <h3>link banks details</h3> </center>
             <input type="hidden" placeholder=""  name="userid" id="userid" value="{{ Auth::user()->id  }}">
             <input type="hidden" placeholder=""  name="name" id="name" value="{{ Auth::user()->name  }}">
-         
+
 
             <input type="email"  id ="email" name="email" required maxlength="50"
             placeholder="enter email address" class="box">
 
+            @if ($errors->has('email'))
+            <div class="error"> {{ $errors->first('email') }}</div>
 
-         <center>   <p>verification staus: {{ session('mssg') }}</p> </center>
+            @endif
+
+
+         <center>
         </center>
 
           <button type="submit" > save</button>

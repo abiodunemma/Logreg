@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -56,5 +57,13 @@ class UserController extends Controller
         $userData = $request->input();
         echo "<pre>"; print_r($userData); die;
   }
+}
+
+public function getprofile()
+{
+ $top = Bank::all();
+
+
+     return view( 'User/profile',compact('top'));
 }
 }

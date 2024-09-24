@@ -32,17 +32,14 @@ class HomeController extends Controller
     }
 
     public function top() {
-        $bank =
-      
-        $bank = \App\Models\Bank::all();
-
-
+      $top = Bank::all();
+    
 
         return view('top');
     }
 
     public function follow() {
-        return view('kyc1',compact('bank'));
+        return view('kyc1',);
     }
 
     public function add(Request $request) {
@@ -62,6 +59,8 @@ class HomeController extends Controller
         return "not added";
     }
 }
+
+
 public function addlink(Request $request){
     $links = new Link();
     print_r($request->input());
@@ -80,6 +79,9 @@ public function addlink(Request $request){
 
 
 
+ }
+ public function go(Request $request){
+    return view('/go');
  }
 }
 
