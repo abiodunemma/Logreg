@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Bank;
 use App\Models\Link;
+use App\Models\Image;
 use validator;
 
 class UserController extends Controller
@@ -44,6 +45,13 @@ class UserController extends Controller
        $user->name = $userData['name'];
        $user->area = $userData['area'];
     $user->email = $userData['email'];
+
+    //'image' => ['required|image|mimes:png,jpg.gif|max:2048'];
+    $path = $request->file('image')->store('images', 'public');
+    $user->path = $path;
+
+
+   // $user->ima = $userData['image'];
       $user->password = bcrypt($userData['password']);
       $user->save();
       return response()->json(["message"=> 'User added successfully!']);
@@ -63,7 +71,11 @@ public function getprofile()
 {
  $top = Bank::all();
 
-
      return view( 'User/profile',compact('top'));
 }
 }
+
+
+
+
+

@@ -20,8 +20,10 @@ Route::post('/kyc1', [App\Http\Controllers\HomeController::class, 'add'])->middl
 
 // profile page functionality
 Route::get('User/profile', [App\Http\Controllers\UserController::class, 'getprofile'])->middleware(('auth'));
-// Route::get('/go', [App\Http\Controllers\HomeController::class, 'go'])->middleware(('auth'));
+Route::get('/User/profile', [App\Http\Controllers\UserController::class, 'store'])->middleware(('auth'))->name('/User/profile');
 
+//make payments
+Route::get('/trans', [App\Http\Controllers\PaymentController::class, 'pay'])->middleware(('auth'));
 
 // auth urls
 Auth::routes();

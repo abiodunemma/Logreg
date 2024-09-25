@@ -37,7 +37,7 @@
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="User/profile">profile</a></li>
-                    <li><a href="#">Transactions</a></li>
+                    <li><a href="/trans">Transactions</a></li>
                     <li><a href="#">Card</a></li>
                     <li><a href="#">Settings</a></li>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Image;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -46,11 +47,14 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+    protected function validator(array $data, )
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'area' => ['required', 'string', 'max:300'],
+            // 'path' => ['required', 'string', 'max:2048'],
+            // 'image' => ['required', 'string', 'max:2048'],
+           // path = $request->file('image')->store('images', 'public'),
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -67,7 +71,10 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'area' => $data['area'],
+          //  'path' => $data['path'],
+   //         'path' => $data['path'],
             'email' => $data['email'],
+
             'password' => Hash::make($data['password']),
         ]);
     }

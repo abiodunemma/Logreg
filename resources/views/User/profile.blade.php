@@ -97,7 +97,7 @@
 </head>
 <body>
     {{ $top }}
-    
+
       -
     <div class="container">
         <header>
@@ -118,9 +118,14 @@
 
             <p class="bio">Web Developer. Tech Enthusiast. Avid Reader.</p>
             <div class="social-links">
-                <a href="#" class="social-link">LinkedIn</a>
-                <a href="#" class="social-link">GitHub</a>
-                <a href="#" class="social-link">Twitter</a>
+                <a href="https://wwww.linkedin.com/uas/login" class="social-link">LinkedIn</a>
+                <a href="https:github.com/login" class="social-link">GitHub</a>
+                <a href="https://x.com/login" class="social-link">Twitter</a>
+                <form action="User/profile" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <input type="file" name="image" required>
+                    <button type="submit"> Upload Image</button>
+                </form>
             </div>
         </div>
     </div>
