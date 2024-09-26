@@ -13,15 +13,25 @@ return new class extends Migration
     {
         Schema::create('pays', function (Blueprint $table) {
             $table->id();
-            $table->foreign('userid')->references('id')->on('users')->onDelete('cascade');
-         //   $table->string('userid');
-            $table->string('name');
-            $table->unsignedBigInteger('userid');
-            //foregin key to users table
-            $table-> string('Amount');
-            $table->string('Card_no');
-            $table->string('ED');
-            $table->string('cvv');
+            $table->string('payment_id');
+            $table->string('product_name');
+            $table->string('quantity');
+            $table->string('amount');
+            $table->string('currency');
+            $table->string('payer_name');
+            $table->string('payer_email');
+            $table->string('payment_status');
+            $table->string('payment_method');
+
+       //  //   $table->string('userid');
+
+            // $table->string('name');
+            // $table->unsignedBigInteger('userid');
+            // //foregin key to users table
+            // $table-> string('Amount');
+            // $table->string('Card_no');
+            // $table->string('ED');
+            // $table->string('cvv');
             $table->timestamps();
 
         });

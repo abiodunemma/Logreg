@@ -23,7 +23,13 @@ Route::get('User/profile', [App\Http\Controllers\UserController::class, 'getprof
 Route::get('/User/profile', [App\Http\Controllers\UserController::class, 'store'])->middleware(('auth'))->name('/User/profile');
 
 //make payments
-Route::get('/trans', [App\Http\Controllers\PaymentController::class, 'pay'])->middleware(('auth'));
+Route::get('Pay/trans', [App\Http\Controllers\PaymentController::class, 'pay'])->middleware(('auth'))->name('Pay/trans');;
+Route::get('Pay/cancel', [App\Http\Controllers\PaymentController::class, 'cancel'])->middleware(('auth'))->name('Pay/cancel');
+Route::get('Pay/success', [App\Http\Controllers\PaymentController::class, 'success'])->middleware(('auth'))->name('Pay/success');
+Route::POST('Pay/paypal', [App\Http\Controllers\PaymentController::class, 'paypal'])->middleware(('auth'))->name('Pay/paypal');
+
+
+
 
 // auth urls
 Auth::routes();

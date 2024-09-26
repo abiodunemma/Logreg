@@ -88,11 +88,15 @@
             <div class="ad">Ad 2: 50% Off All Items!</div>
         </section>
 
-        <form class="payment-form">
+        <form class="payment-form" action="{{ route('Pay/paypal') }}" method="POST">
+            @csrf
             <h2>Make a Payment</h2>
-            <label for="amount">Amount:</label>
-            <input type="number" id="amount" name="amount" required>
-
+            <label for="amount">Price:  $5</label>
+            <input type="hidden" name="price" value="5" required>
+            <input type="hidden" name="product_name" value="laptop" required>
+            <input type="hidden" name="quantity" value="1" required>
+            {{--  <input type="hidden" name="price" value="5" required>  --}}
+{{--
             <label for="card-number">Card Number:</label>
             <input type="text" id="card-number" name="card-number" required>
 
@@ -100,9 +104,9 @@
             <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
 
             <label for="cvv">CVV:</label>
-            <input type="text" id="cvv" name="cvv" required>
+            <input type="text" id="cvv" name="cvv" required>  --}}
 
-            <button type="submit">Pay Now</button>
+            <button type="submit">Pay Now with Paypal</button>
         </form>
     </div>
 </body>
