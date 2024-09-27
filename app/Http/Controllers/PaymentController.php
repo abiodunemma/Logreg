@@ -55,6 +55,7 @@ class PaymentController extends Controller
     }
 public function success(Request $request){
     $provider = new PayPalClient;
+
     $provider->setApiCredentials(config('paypal'));
     $provider->getAccessToken();
     $response = $provider->capturePaymentOrder($request->token);
@@ -62,7 +63,28 @@ public function success(Request $request){
 if(isset($response['status']) && $response['status'] == 'COMPLETED') {
 
     //Insert data into databse
-    $pay
+    $pay = new Pay;
+    $pay->payment_id = $response['id'];
+    $pay->product_name = session()->get('product_name');
+    $pay->quantity = session()->get('quantity');
+    $pay->amount = $response['purchase_units'][0]['payments']['captures'][0]['amount']
+    ['value'];
+    $pay->currency = $response['purchase_units'][0]['payments']['captures'][0]['amount']
+    ['currency_code'];
+    $pay->payer_name = $response['payer']['name']['given_name'];
+    $pay->payer_email = $response['payer']['email_address'];
+    $pay->payment_status = $response['status'];
+    $pay->payment_method =  "Paypal";
+    $pay->save();
+
+    return "payment is successful";
+
+    unset($_SESSION['product_name']);
+    unset($_SESSION['quantity']);
+
+
+} else{
+    return redirect()->route('Pay/cancel');
 }
 
 }
